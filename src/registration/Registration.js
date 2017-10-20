@@ -6,7 +6,7 @@ import {Button} from "../common/button/Button";
 
 export default class Registration extends React.Component {
   static propTypes = {
-    name: PropTypes.string.isRequired,
+    isLoading: PropTypes.bool.isRequired,
     actions: PropTypes.shape({
       changeName: PropTypes.func.isRequired,
       changePassword: PropTypes.func.isRequired,
@@ -21,9 +21,9 @@ export default class Registration extends React.Component {
     return (
       <div id='registration'>
         <div className="wrapper">
-          <InputField label='E-mail' inputProps={{onChange: this.handleNameChange, type: 'text'}}/>
+          <InputField label='E-mail' inputProps={{onChange: this.handleNameChange, type: 'email'}}/>
           <InputField label='Пароль' inputProps={{onChange: this.handlePasswordChange, type: 'password'}}/>
-          <Button onClick={this.props.actions.submit}>Зарегистрироваться</Button>
+          <Button disabled={this.props.isLoading} onClick={this.props.actions.submit}>Зарегистрироваться</Button>
         </div>
       </div>
     );
