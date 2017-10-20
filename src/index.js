@@ -10,6 +10,8 @@ import {Provider} from 'react-redux';
 import {ConnectedRouter} from 'connected-react-router';
 import registerServiceWorker from "./registerServiceWorker";
 import routes from "./routes";
+import moment from 'moment';
+import 'moment/locale/ru';
 
 const history = createBrowserHistory();
 const reducer = connectRouter(history)(rootReducer);
@@ -22,7 +24,7 @@ if (module.hot) {
     store.replaceReducer(reducer)
   );
 }
-
+moment.locale('ru');
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
