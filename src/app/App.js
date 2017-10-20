@@ -9,8 +9,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>{this.props.version}</h1>
+      <div>
+        {this.props.children}
       </div>
     );
   }
