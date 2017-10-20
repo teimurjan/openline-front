@@ -4,7 +4,7 @@ import Registration from './Registration';
 import * as RegistrationActions from './RegistrationActions';
 
 function mapStateToProps(state) {
-  return state.app.toJS();
+  return state.registration.toJS();
 }
 
 function mapDispatchToProps(dispatch) {
