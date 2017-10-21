@@ -1,0 +1,35 @@
+@import "../../variables";
+
+.footer-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 201px;
+  background-color: #efefef;
+  display: flex;
+  justify-content: center;
+  .content{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+      .column{
+        align-items: baseline;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .link{
+          padding-bottom: 6px;
+          text-decoration: none;
+          color: black;
+          cursor: pointer;
+        }
+        .title{
+          color: #FF5048;
+          font-weight: 700;
+          padding-bottom: 13px;
+        }
+      }
+  }
+}
