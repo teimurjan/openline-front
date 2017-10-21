@@ -35,7 +35,9 @@ export default class Header extends React.Component {
                  <a className='link'>Контакты</a>
                  <a className='link'>Правила сервиса</a>
                  <a className='link'>Задать вопрос</a><br/>
-                 <img src={logo}/>
+                 <Link to='/'>
+                     <img src={logo} className='logo'/>
+                 </Link>
              </div>
          </div>
      </div>
