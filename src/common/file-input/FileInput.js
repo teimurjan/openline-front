@@ -14,7 +14,7 @@ const FileInput = ({value, onChange, label}) => {
     <div className={`file-input ${value ? 'exists' : 'new'}`}>
       {label}
       <label htmlFor="fileInput">
-        <span>{value && value.name}</span>
+        <span>{value.name || ''}</span>
       </label>
       <input id="fileInput" type="file" name="" onChange={onFileUpload} accept="image/*"/>
     </div>

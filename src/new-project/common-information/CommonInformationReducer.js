@@ -10,7 +10,7 @@ import {
 const initialState = Map({
   name: '',
   target: '',
-  image: null,
+  image: {},
   goalSum: 0,
   description: '',
   deadline: null,

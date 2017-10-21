@@ -1,0 +1,12 @@
+@import "../../variables";
+
+.add-block-button {
+  width: 100%;
+  border: 1px dashed $secondary-text-color;
+  text-align: center;
+  background: #FFF;
+  color: $secondary-text-color;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  font-size: 28px;
+}
