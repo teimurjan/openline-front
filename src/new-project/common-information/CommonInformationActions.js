@@ -48,8 +48,8 @@ export function changeDeadline(deadline) {
 
 export function submit() {
   return (dispatch, getState) => {
-    const {name, target, image, goalSum, description, deadline} = getState().commonInformation.toJS();
-    const data = {name, target, image, goalSum, description, deadline};
+    const {name, target, image: {url}, goalSum, description, deadline} = getState().commonInformation.toJS();
+    const data = {name, target, image: url, goalSum, description, deadline};
     const token = localStorage.getItem('token');
     dispatch({type: SUBMIT});
     return post('/projects', data, token)
