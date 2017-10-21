@@ -28,7 +28,8 @@ FileInput.propTypes = {
 };
 
 FileInput.defaultProps = {
-  label: ''
+  label: '',
+  value: {name: ''}
 };
 
 export default FileInput;

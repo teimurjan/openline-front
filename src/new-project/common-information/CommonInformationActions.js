@@ -46,16 +46,13 @@ export function changeDeadline(deadline) {
   return {type: CHANGE_DEADLINE, payload: {deadline}}
 }
 
-const mockResponse = {objects: {id: 1}};
-
 export function submit() {
   return (dispatch, getState) => {
     const {name, target, image, goalSum, description, deadline} = getState().commonInformation.toJS();
     const data = {name, target, image: image.url, goalSum, description, deadline};
     const token = localStorage.getItem('token');
     dispatch({type: SUBMIT});
-    // return post('/projects', data, token)
-    return Promise.resolve(mockResponse)
+    return post('/projects', data, token)
       .then(response => {
         dispatch({type: SUBMIT_SUCCESS,});
         dispatch(push(`${window.location.pathname}/${response.objects.id}`));
