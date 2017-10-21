@@ -1,6 +1,40 @@
 #login {
+  .title{
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 48px;
+  }
   .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     padding-left: 35%;
     padding-right: 35%;
+    margin: auto;
+  }
+  .input-field-text-wrapper {
+    margin-bottom: 25px;
+    input{
+      box-sizing: border-box;
+    }
+  }
+  .button-container{
+    display: flex;
+    flex-direction: row;
+  }
+  .title-icon{
+    margin: 24px;
+  }
+  .login-button{
+    width: 95%;
+    margin-top: 21px;
+    cursor: pointer;
+
+    &:hover{
+      opacity: 0.9;
+    }
+  }
+  .linkto{
+    width:95%;
   }
 }
