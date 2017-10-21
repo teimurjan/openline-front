@@ -1,0 +1,30 @@
+@import "../../variables";
+
+.header-container{
+  padding: 24px;
+  overflow: hidden;
+  border-bottom: 1px solid #E0E0E0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  .header-right{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    .link{
+      .right{
+        justify-content: flex-end;
+      }
+      font-size:16px;
+      text-decoration: none;
+      color: black;
+      margin-right: 48px;
+      padding-bottom: 5px;
+      &:hover{
+        border-bottom: 2px solid #FF5048;
+        transition: 0.2s;
+        cursor:pointer;
+      }
+    }
+  }
+}
