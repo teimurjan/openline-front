@@ -12,9 +12,11 @@ export default class App extends Component {
   render() {
     return (
       <div id='app'>
-        <Header></Header>
-        {this.props.children}
-        <Footer></Footer>
+        <Header/>
+        <div className="main">
+          {this.props.children}
+        </div>
+        <Footer/>
       </div>
     );
   }
