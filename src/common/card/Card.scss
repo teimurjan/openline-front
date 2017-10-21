@@ -1,0 +1,45 @@
+@import "../../variables";
+
+.project-card {
+  margin: 10px;
+  width: 343px;
+  p {
+    -webkit-margin-before: 0.5em;
+    -webkit-margin-after: 0.5em;
+  }
+  .image {
+    background: center center;
+    background-size: cover;
+    height: 202px;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+  .card-data {
+    border: 1px solid $border-color;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    overflow: hidden;
+    .content {
+      padding: 24px;
+
+      .target {
+        font-size: $font-small-text;
+        color: $secondary-accent-text-color;
+      }
+      .title {
+        font-size: $font-normal-text;
+        color: $primary-text-color;
+      }
+      .details {
+        font-size: $font-small-text;
+        color: $secondary-text-color;
+        .key {
+        }
+        .value {
+          font-weight: bold;
+          color: $secondary-accent-text-color;
+        }
+      }
+    }
+  }
+}

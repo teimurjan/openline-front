@@ -1,33 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import {createBrowserHistory} from 'history';
 import {applyMiddleware, compose, createStore} from 'redux';
-import {connectRouter, routerMiddleware} from 'connected-react-router';
+import {syncHistoryWithStore} from 'react-router-redux';
+import {browserHistory, Router} from 'react-router';
 import rootReducer from "./rootReducer";
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
-import {ConnectedRouter} from 'connected-react-router';
 import registerServiceWorker from "./registerServiceWorker";
 import routes from "./routes";
+import moment from 'moment';
+import 'moment/locale/ru';
 
-const history = createBrowserHistory();
-const reducer = connectRouter(history)(rootReducer);
 const composeEnhancers = (process.env.NODE_ENV !== 'production' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
-const enhancer = composeEnhancers(applyMiddleware(thunk, routerMiddleware(history)));
-const store = createStore(reducer, enhancer);
+const enhancer = composeEnhancers(applyMiddleware(thunk));
+const store = createStore(rootReducer, enhancer);
+
+const history = syncHistoryWithStore(browserHistory, store);
 
 if (module.hot) {
   module.hot.accept('./rootReducer', () =>
-    store.replaceReducer(reducer)
+    store.replaceReducer(rootReducer)
   );
 }
-
+moment.locale('ru');
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
+    <Router history={history}>
       {routes}
-    </ConnectedRouter>
+    </Router>
   </Provider>
   , document.getElementById('root'));
 registerServiceWorker();
