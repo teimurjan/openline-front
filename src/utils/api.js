@@ -29,18 +29,24 @@ function makeRequest(method, url, token, data = null) {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
+      'X-Authorization': `Bearer ${token}`
     }
   };
   if (data) fetchParams.body = JSON.stringify(data);
-  return fetch(url, fetchParams)
+  return fetch(`http://localhost:8080/api${url}`, fetchParams)
     .then(validateStatusCode)
     .catch(onResponseInvalid)
     .then(onResponseValid);
 }
 
 export function get(url, token) {
-  return makeRequest('GET', url, token);
+  return makeRequest('GET', url, token)
+    .then((response) => response.response.objects);
+}
+
+export function getOne(url, token) {
+  return get(url, token)
+    .then((objects) => objects[0]);
 }
 
 export function post(url, data, token) {

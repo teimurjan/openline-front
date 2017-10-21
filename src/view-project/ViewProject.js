@@ -14,7 +14,7 @@ export default class ViewProject extends React.Component {
   };
 
   componentWillMount() {
-    const projectId = this.props.projectId7;
+    const projectId = this.props.projectId;
     this.props.actions.getProject(projectId);
   }
 
