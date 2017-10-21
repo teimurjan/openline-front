@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {TextareaField} from "../../common/textarea-field/TextareaField";
 import FileInput from "../../common/file-input/FileInput";
 import './Details.scss';
+import AddBlockButton from "./AddBlockButton";
 
 export default class Details extends React.Component {
   static propTypes = {
@@ -19,13 +20,16 @@ export default class Details extends React.Component {
     return (
       <div>
         {this.props.blocks.map((block, index) => {
-          if (block.type === 'text')
-            return <TextareaField textareaProps={{
-              onChange: e => this.props.actions.changeBlock(index, e.target.value)
-            }}/>;
-          return <FileInput onChange={this.props.fetchImage}/>
+          if (block.type === 'text') {
+            const onChange = e => this.props.actions.changeBlock(index, e.target.value);
+            return <TextareaField key={index} textareaProps={{onChange}}/>;
+          }
+          return <FileInput key={index} onChange={image => this.props.actions.fetchImage(index, image)}/>
         })}
-        <button className='add-block-button'>+</button>
+        <AddBlockButton>
+          <button onClick={e => this.props.actions.addBlock('text')}>Текст</button>
+          <button onClick={e => this.props.actions.addBlock('image')}>Фото</button>
+        </AddBlockButton>
       </div>
     )
   }

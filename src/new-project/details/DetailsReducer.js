@@ -11,11 +11,16 @@ const initialState = Map({
 
 export default createReducer({
   [ADD_BLOCK]: (state, action) => state.merge({
-    blocks: state.blocks.push({type: action.payload.type, value: null})
+    blocks: state.get('blocks')
+      .push({type: action.payload.type, value: null})
   }),
-  [CHANGE_BLOCK]: (state, action) => state.merge({
-    blocks: state.blocks.set(action.payload.position, action.payload.value)
-  }),
+  [CHANGE_BLOCK]: (state, action) => {
+    const type = state.get('blocks').get(action.payload.position).type;
+    return state.merge({
+      blocks: state.get('blocks')
+        .set(action.payload.position, {type, value: action.payload.value})
+    })
+  },
   [FETCH_IMAGE]: (state, action) => state.set('isLoading', true),
   [FETCH_IMAGE_SUCCESS]: (state, action) => state.set('isLoading', false),
   [FETCH_IMAGE_FAILURE]: (state, action) => state.merge({

@@ -66,5 +66,5 @@ export function remove(url, token, data = null) {
 }
 
 export function getImageUrl(data, token) {
-  return post('getImageUrl', data, token);
+  return post('file-upload', data, token);
 }
