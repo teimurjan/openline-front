@@ -58,3 +58,7 @@ export function patch(url, data, token) {
 export function remove(url, token, data = null) {
   return makeRequest('DELETE', url, token, data);
 }
+
+export function getImageUrl(data, token) {
+  return post('getImageUrl', data, token);
+}
