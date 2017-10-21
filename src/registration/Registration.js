@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {InputField} from "../common/input-field/InputField";
+import InputField from "../common/input-field/InputField";
 import './Registration.scss';
-import {Button} from "../common/button/Button";
+import Button from "../common/button/Button";
 import img from "../assets/images/lightning.svg";
 
 export default class Registration extends React.Component {
@@ -26,7 +26,7 @@ export default class Registration extends React.Component {
           <div className='title'>Регистрация</div>
           <InputField className='input-signup' label='E-mail' inputProps={{onChange: this.handleNameChange, type: 'email'}}/>
           <InputField label='Пароль' inputProps={{onChange: this.handlePasswordChange, type: 'password'}}/>
-          <Button className='primary-button signup-button' disabled={this.props.isLoading} onClick={this.props.actions.submit}>Зарегистрироваться</Button>
+          <Button className='primary-button green-color-button signup-button' disabled={this.props.isLoading} onClick={this.props.actions.submit}>Зарегистрироваться</Button>
         </div>
       </div>
     );

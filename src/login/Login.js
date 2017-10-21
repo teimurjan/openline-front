@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {InputField} from "../common/input-field/InputField";
+import InputField from "../common/input-field/InputField";
 import './Login.scss';
-import {Button} from "../common/button/Button";
+import Button from "../common/button/Button";
 import {Link} from "react-router";
 
 export default class Registration extends React.Component {

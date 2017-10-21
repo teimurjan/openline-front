@@ -1,1 +1,19 @@
-  
+.button{
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.smaller-button {
+  height: 36px;
+  padding: 10px 23px;
+  color: white;
+}
+.primary-button {
+  height: 48px;
+  padding: 10px;
+  color: white;
+}
+.green-color-button {
+  background-color: #24DB71;
+}

@@ -7,20 +7,33 @@
     -webkit-margin-before: 0.5em;
     -webkit-margin-after: 0.5em;
   }
-  .image {
-    background: center center;
-    background-size: cover;
-    height: 202px;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+  .image-container {
+    position: relative;
+    height: 220px;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    .image {
+      background: center center;
+      background-size: cover;
+      height: 202px;
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+    .floating-button {
+      position: absolute;
+      left: 52%;
+      height: 36px;
+      bottom: 1px;
+    }
   }
   .card-data {
-    border: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     overflow: hidden;
     .content {
-      padding: 24px;
+      padding: 2px 24px 24px 24px;
 
       .target {
         font-size: $font-small-text;
@@ -33,6 +46,7 @@
       .details {
         font-size: $font-small-text;
         color: $secondary-text-color;
+        margin-bottom: 20px;
         .key {
         }
         .value {
@@ -40,6 +54,9 @@
           color: $secondary-accent-text-color;
         }
       }
+    }
+    .loading-line {
+      border-bottom: 1px solid $border-color;
     }
   }
 }
