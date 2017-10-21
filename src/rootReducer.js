@@ -16,4 +16,5 @@ export default combineReducers({
   newProject: newProjectReducer,
   commonInformation: commonInformationReducer,
   details: detailsReducer,
+  viewProject: viewProjectReducer
 });
