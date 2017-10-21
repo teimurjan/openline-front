@@ -6,6 +6,7 @@ import Login from "./login/LoginContainer";
 import NewProject from "./new-project/NewProjectContainer";
 import CommonInformation from "./new-project/common-information/CommonInformationContainer";
 import Details from "./new-project/details/DetailsContainer";
+import IndividualProjectPage from './view-project/individual-project-page/IndividualProjectPage';
 
 export default (
   <Route path='/' component={App}>
@@ -15,5 +16,6 @@ export default (
       <IndexRoute path='' component={CommonInformation}/>
       <Route path=':id' component={Details}/>
     </Route>
+    <Route path='project/view/:id' component={IndividualProjectPage}/>
   </Route>
 )

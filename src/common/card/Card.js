@@ -34,7 +34,7 @@ export default class Card extends React.Component {
 
   render() {
     const timeLeft = moment(this.props.project.deadline).fromNow();
-    const currentSum = Math.round(this.props.project.currentSum / this.props.project.goalSum * 100);
+    const currentSumPercentage = Math.round(this.props.project.currentSum / this.props.project.goalSum * 100);
     return (
       <div className='project-card' onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseOut}>
         <div className="image-container">
@@ -52,7 +52,7 @@ export default class Card extends React.Component {
               </p>
               <p className='currentSum'>
                 <span className='key'>Собрано: </span>
-                <span className='value'>{currentSum}%</span>
+                <span className='value'>{currentSumPercentage}%</span>
               </p>
               <p className='timeLeft'>
                 <span className='key'>Осталось времени: </span>
@@ -61,7 +61,7 @@ export default class Card extends React.Component {
             </div>
             <UserLine user={this.props.user}/>
           </div>
-          <LoadingLine percents={currentSum}/>
+          <LoadingLine percents={currentSumPercentage}/>
         </div>
       </div>
     )

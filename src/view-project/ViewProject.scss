@@ -1,0 +1,31 @@
+@import "../variables";
+
+#view-project {
+  width: 1128px;
+  margin: 47px auto 108px auto;
+  .header {
+    .title {
+      font-size: $font-title;
+      font-weight: bold;
+      -webkit-margin-before: 0.5em;
+      -webkit-margin-after: 0.5em;
+    }
+    .target {
+      font-size: $font-small-text;
+      color: $secondary-accent-text-color;
+    }
+  }
+  .content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+
+    .blocks-container {
+      flex: 0 0 589px;
+    }
+    .info-container {
+      padding-left: 34px;
+      flex: 1 0 auto;
+    }
+  }
+}
